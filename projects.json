@@ -1790,6 +1790,15 @@
 "techStack":["game","html","css","javascript"],
 "difficulty":"intermediate",
 "projectPath":"./public/CYBER TYPE BATTLE/index.html"
+},
+{
+"projectNo":179,
+"projectName":"Quantum CodeBreaker",
+"projectType":"Game",
+"projectDesc":"Deduce a secret 4-node quantum matrix key before time runs out or security lockdowns trigger",
+"techStack":["game","html","css","javascript"],
+"difficulty":"intermediate",
+"projectPath":"./public/Quantum_CodeBreaker/index.html"
 }
 
 ]
