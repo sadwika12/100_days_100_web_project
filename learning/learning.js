@@ -341,7 +341,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     learningProgress.lastTopic = `${topic.categoryId}/${topic.id}`;
     saveProgress();
 
-    // Fix Bug 3: Highlight sidebar list items immediately
+    // Highlight selected item in sidebar list immediately for both articles and quizzes
     document
       .querySelectorAll('.topic-item')
       .forEach((item) => item.classList.remove('active'));
@@ -356,6 +356,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       activeItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
+    // Launch quiz view directly if selected
     if (topic.id === 'quiz') {
       launchQuiz(topic.categoryId, topic.title);
       return;
@@ -740,7 +741,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   /* ============================================================
-     QUIZ ENGINE — Premium Fixed-Sized Horizontal Button Row
+     QUIZ ENGINE — Strict Flexbox Alignment Row Layout
      ============================================================ */
   let persistentResultsLog = []; 
 
@@ -861,7 +862,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       else if (percentage >= 40) badge = '📚 Keep Practicing';
       else badge = '💪 Try Again';
 
-      // Unified structural element specs for pristine cross-axis row synchronization
       const btnStyleBase = `
         display: inline-flex;
         align-items: center;
@@ -921,6 +921,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         .getElementById('reviewAnswers')
         .addEventListener('click', () => showReview('all'));
     }
+
     function showReview(filter) {
       document.getElementById('topicNavigation').style.display = 'flex';
 
